@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html>
+
+<head>
+<title> BoardGameGeek Reviews Prediction</title>
+</head>
+
+<body style = 'background-image: url(https://www.xmple.com/wallpaper/solid-color-one-colour-single-plain-orange-1280x720-c-f0cbab-f-24.svg)'>
+<h1 style = 'background-color: orange; text-align:center'> BoardGameGeek Reviews Prediction </h1>
+
+<p style="font-size:105%"> Due to growing Users, data is increasing vastly that it is hard to manually read reviews of the users and gives the <strong>Rating(1-10)</strong>.</p>
+<p style = "font-size:105%" ><strong>'BoardGameGeek Review Predictor'</strong> page takes in reviews of the users and predicts <strong>Rating(1-10)</strong>.</p>
+<p style = 'font-size:105%'>Prediction of the Game review is based on the machine learning model that I have trained on the data set from the <a href = 'https://www.kaggle.com/jvanelteren/boardgamegeek-reviews'>kaggle</a></p>
+
+
+<h3> Please enter GAME review in the below box.</h3>
+
+<form action = "{{url_for('Predict')}}" method = "post">
+
+<textarea style = "font-size:105%" name = 'message' rows = '10' cols = '60'> </textarea>
+<br><br>
+<input type = 'submit' class = 'btn-info' value = 'Predict'>
+
+<br>
+<hr>
+
+<h2 style = 'background-color:orange; text-align:center'> Prediction Result of the Review. </h2>
+
+{% if prediction  %}
+<h2> PREDICTED REVIEW RATING --  <mark style = "background-color:green"> {{ prediction[0]}} </mark></h2>
+
+{% endif %}
+</body>
+</html>
